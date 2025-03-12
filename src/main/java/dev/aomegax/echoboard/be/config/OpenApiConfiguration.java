@@ -25,30 +25,33 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class OpenApiConfig {
+public class OpenApiConfiguration {
 
   @Bean
   public OpenAPI customOpenAPI(
       @Value("${info.application.artifactId}") String appName,
       @Value("${info.application.description}") String appDescription,
-      @Value("${info.application.version}") String appVersion) {
+      @Value("${info.application.version}") String appVersion,
+      @Value("${server.port}") Integer port) {
     return new OpenAPI()
         .servers(
             List.of(
-                new Server().url("http://localhost:8080"),
-                new Server()
-                    .url("https://{host}{basePath}")
-                    .variables(
-                        new ServerVariables()
-                            .addServerVariable(
-                                "host",
-                                new ServerVariable()
-                                    ._enum(List.of("dev", "uat", "prod")) // TODO: set server hosts
-                                    ._default("")) // TODO: set default server host
-                            .addServerVariable(
-                                "basePath",
-                                new ServerVariable()._default("")) // TODO: set app base path
-                        )))
+                new Server().url("http://localhost:" + port)//,
+//                new Server()
+//                    .url("https://{host}{basePath}")
+//                    .variables(
+//                        new ServerVariables()
+//                            .addServerVariable(
+//                                "host",
+//                                new ServerVariable()
+//                                    ._enum(List.of("dev", "uat", "prod")) // TODO: set server hosts
+//                                    ._default("")) // TODO: set default server host
+//                            .addServerVariable(
+//                                "basePath",
+//                                new ServerVariable()._default("")) // TODO: set app base path
+//                        ))
+                        )
+                    )
         .components(
             new Components()
                 .addSecuritySchemes(

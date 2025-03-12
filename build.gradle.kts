@@ -34,6 +34,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-cache")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-devtools")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.2.0")
 
@@ -41,9 +42,15 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5")
     implementation("org.modelmapper:modelmapper:3.2.2")
 
+    // H2
+    runtimeOnly("com.h2database:h2:2.3.232")
+
     // Lombok (con annotation processor!)
     compileOnly("org.projectlombok:lombok:1.18.36")
     annotationProcessor("org.projectlombok:lombok:1.18.36")
+
+    // ModelMapper
+    implementation("org.modelmapper:modelmapper:3.2.2")
 
     // AspectJ
     implementation("org.aspectj:aspectjrt:1.9.22.1")

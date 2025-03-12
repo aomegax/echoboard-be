@@ -24,7 +24,7 @@ See the [OpenApi 3 here.](https://editor.swagger.io/?url=https://raw.githubuserc
 - Spring Web
 - Hibernate
 - JPA
-- ...
+- Cassandra
 - TODO
 
 ---
@@ -36,15 +36,15 @@ See the [OpenApi 3 here.](https://editor.swagger.io/?url=https://raw.githubuserc
 - git
 - gradle 8.13
 - jdk-17
+- cassandra
 
 ### Run the project
 
 #### Install gradle
 sdk install gradle 8.13
 
-Start the Springboot application with this command:
-
-`mvn spring-boot:run -Dspring.profiles.active=local`
+#### Install cassandra
+docker pull cassandra:latest
 
 
 ## Contributors 👥
