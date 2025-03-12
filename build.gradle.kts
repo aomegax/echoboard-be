@@ -95,13 +95,13 @@ sourceSets {
 }
 
 //val appVersion = project.version.toString()
-
+//
 //tasks.withType<ProcessResources> {
 //    // Usa una stringa semplice (appVersion) che può essere serializzata
-//    inputs.property("appVersion", appVersion)
+//    inputs.property("appVersion", "1.3.3")
 //
 //    // Sostituisci il placeholder nel file application.properties
 //    filesMatching("**/application.properties") {
-//        expand(mapOf("appVersion" to appVersion))
+//        expand(mapOf("appVersion" to "1.3.3"))
 //    }
 //}
