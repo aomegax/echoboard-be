@@ -9,8 +9,8 @@ import lombok.Setter;
  *
  * option_id	UUID (PK)	Unique identifier for each option
  * question_id	UUID (FK)	Reference to the related question
- * option_text	TEXT	Text of the option
- * order	INT	Order of the option in the list
+ * option_text	TEXT    	Text of the option
+ * ordering	    INT	        Order of the option in the list
  */
 
 @Getter
@@ -29,5 +29,5 @@ public class Option {
 
     private String optionContent;
 
-    private Integer order;
+    private Integer ordering;
 }
