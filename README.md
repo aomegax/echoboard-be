@@ -21,10 +21,11 @@ See the [OpenApi 3 here.](https://editor.swagger.io/?url=https://raw.githubuserc
 
 - Java 17
 - Spring Boot 3
-- Spring Web
+- Spring Security 6
 - Hibernate
 - JPA
-- Cassandra
+- Redis
+- 
 - TODO
 
 ---
@@ -36,6 +37,9 @@ See the [OpenApi 3 here.](https://editor.swagger.io/?url=https://raw.githubuserc
 - git
 - gradle 8.13
 - jdk-17
+
+#### Redis
+docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 -v ~/Development/redis-data:/data redis/redis-stack:latest
 
 #### Cert
 - Generate a Private Key (RSA):  
