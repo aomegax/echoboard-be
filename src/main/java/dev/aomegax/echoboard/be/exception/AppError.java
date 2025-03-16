@@ -13,6 +13,10 @@ public enum AppError {
 
   PROVIDER_UNKNOWN(HttpStatus.BAD_REQUEST, "Login error", "Login provider unknown"),
 
+  INPUT_DATA_ERROR(HttpStatus.BAD_REQUEST, "Input error", "Request data is invalid"),
+
+  CSV_INVALID(HttpStatus.BAD_REQUEST, "CSV Error", "Problem to analyze the CSV file at row %d"),
+
   UNKNOWN(null, null, null);
 
   public final HttpStatus httpStatus;

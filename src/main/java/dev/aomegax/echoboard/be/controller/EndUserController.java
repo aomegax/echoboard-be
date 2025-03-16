@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/v1/users")
 @RequiredArgsConstructor
-@Tag(name = "EndUser", description = "description")
+@Tag(name = "EndUser", description = "API to manage users")
 public class EndUserController {
 
     private final EndUserService endUserService;
