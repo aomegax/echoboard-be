@@ -1,19 +1,19 @@
-# Template for Java Spring Microservice project
+# EchoBoard
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TODO-set-your-id&metric=alert_status)](https://sonarcloud.io/dashboard?id=TODO-set-your-id)
-[![Integration Tests](https://github.com/pagopa/<TODO-repo>/actions/workflows/ci_integration_test.yml/badge.svg?branch=main)](https://github.com/pagopa/<TODO-repo>/actions/workflows/ci_integration_test.yml)
+[//]: # ([![Quality Gate Status]&#40;https://sonarcloud.io/api/project_badges/measure?project=TODO-set-your-id&metric=alert_status&#41;]&#40;https://sonarcloud.io/dashboard?id=TODO-set-your-id&#41;)
+[//]: # ([![Integration Tests]&#40;https://github.com/pagopa/<TODO-repo>/actions/workflows/ci_integration_test.yml/badge.svg?branch=main&#41;]&#40;https://github.com/pagopa/<TODO-repo>/actions/workflows/ci_integration_test.yml&#41;)
 
-TODO: add a description
+## Description
+A platform to collect anonymous or public feedback between colleagues, promoting communication, growth and continuous improvement. 
 
-TODO: generate a index with this tool: https://ecotrust-canada.github.io/markdown-toc/
+**Your Voice, your impact – share, grow, thrive.**
 
-TODO: resolve all the TODOs in this template
 
 ---
 
-## Api Documentation 📖
+## API Documentation 📖
 
-See the [OpenApi 3 here.](https://editor.swagger.io/?url=https://raw.githubusercontent.com/pagopa/<TODO-repo>/main/openapi/openapi.json)
+See the [OpenApi 3 here.](https://editor.swagger.io/?url=https://raw.githubusercontent.com/aomegax/echoboard-be/main/openapi/openapi.json)
 
 ---
 
@@ -21,27 +21,12 @@ See the [OpenApi 3 here.](https://editor.swagger.io/?url=https://raw.githubuserc
 
 - Java 17
 - Spring Boot 3
-- Spring Web
+- Spring Security 6
 - Hibernate
 - JPA
-- ...
+- Redis
+- 
 - TODO
-
----
-
-## Start Project Locally 🚀
-
-### Prerequisites
-
-- docker
-
-### Run docker container
-
-from `./docker` directory
-
-`sh ./run_docker.sh local`
-
-ℹ️ Note: for PagoPa ACR is required the login `az acr login -n <acr-name>`
 
 ---
 
@@ -50,46 +35,33 @@ from `./docker` directory
 ### Prerequisites
 
 - git
-- maven
+- gradle 8.13
 - jdk-17
+
+#### Redis
+docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 -v ~/Development/redis-data:/data redis/redis-stack:latest
+
+#### Cert
+- Generate a Private Key (RSA):  
+`openssl genpkey -algorithm RSA -out private-key.pem`  
+- Generate the related Public Key  
+`openssl rsa -pubout -in private-key.pem -out public-key.pem`  
+- Convert PCKS
+`openssl pkcs8 -topk8 -inform PEM -outform PEM -in private-key.pem -out private-key-pkcs8.pem -nocrypt`
+
 
 ### Run the project
 
-Start the springboot application with this command:
+#### Install gradle
+sdk install gradle 8.13
 
-`mvn spring-boot:run -Dspring.profiles.active=local`
+#### Install cassandra
+docker pull cassandra:latest
 
-### Spring Profiles
-
-- **local**: to develop locally.
-- _default (no profile set)_: The application gets the properties from the environment (for Azure).
-
-### Testing 🧪
-
-#### Unit testing
-
-To run the **Junit** tests:
-
-`mvn clean verify`
-
-#### Integration testing
-
-From `./integration-test/src`
-
-1. `yarn install`
-2. `yarn test`
-
-#### Performance testing
-
-install [k6](https://k6.io/) and then from `./performance-test/src`
-
-1. `k6 run --env VARS=local.environment.json --env TEST_TYPE=./test-types/load.json main_scenario.js`
-
----
 
 ## Contributors 👥
 
-Made with ❤️ by PagoPa S.p.A.
+Made with ❤️ by myself.
 
 ### Maintainers
 
