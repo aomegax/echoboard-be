@@ -2,6 +2,7 @@ package dev.aomegax.echoboard.be.controller;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

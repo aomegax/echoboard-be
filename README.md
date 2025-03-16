@@ -36,7 +36,15 @@ See the [OpenApi 3 here.](https://editor.swagger.io/?url=https://raw.githubuserc
 - git
 - gradle 8.13
 - jdk-17
-- cassandra
+
+#### Cert
+- Generate a Private Key (RSA):  
+`openssl genpkey -algorithm RSA -out private-key.pem`  
+- Generate the related Public Key  
+`openssl rsa -pubout -in private-key.pem -out public-key.pem`  
+- Convert PCKS
+`openssl pkcs8 -topk8 -inform PEM -outform PEM -in private-key.pem -out private-key-pkcs8.pem -nocrypt`
+
 
 ### Run the project
 
